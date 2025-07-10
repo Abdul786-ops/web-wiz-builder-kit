@@ -27,7 +27,8 @@ const Header = () => {
             <img 
               src="/lovable-uploads/37cd7e9c-1d1b-4835-a858-12048792c8de.png" 
               alt="Genetech Logo" 
-              className="h-8 w-auto"
+              className="h-10 w-auto"
+              style={{ background: 'transparent' }}
             />
             <span className="text-navy font-bold text-xl">Genetech</span>
           </Link>
