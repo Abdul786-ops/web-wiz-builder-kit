@@ -67,31 +67,117 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 px-4 text-center text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-400/20"></div>
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="mb-8">
-            <img 
-              src="/lovable-uploads/37cd7e9c-1d1b-4835-a858-12048792c8de.png" 
-              alt="Genetech Technologies Logo" 
-              className="h-32 mx-auto mb-8 filter brightness-110"
-            />
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-            Genetech Technologies
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
-            Innovative IT Solutions for Modern Businesses. We transform ideas into digital reality with cutting-edge technology.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 py-3">
-              <Link to="/services" className="flex items-center">
-                Our Services <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3">
-              <Link to="/contact">Get In Touch</Link>
-            </Button>
+      <section className="relative py-20 px-4 text-center text-white overflow-hidden min-h-screen flex items-center">
+        {/* Background Images */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-slate-900/80 to-blue-900/90 z-10"></div>
+          <img 
+            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+            alt="Technology Background" 
+            className="absolute inset-0 w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-slate-900/30 z-5"></div>
+        </div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-32 h-32 bg-cyan-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-40 left-20 w-16 h-16 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-2000"></div>
+        
+        <div className="container mx-auto max-w-6xl relative z-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Content */}
+            <div className="text-left">
+              <div className="mb-8">
+                <img 
+                  src="/lovable-uploads/37cd7e9c-1d1b-4835-a858-12048792c8de.png" 
+                  alt="Genetech Technologies Logo" 
+                  className="h-24 mb-8 filter brightness-110"
+                />
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent leading-tight">
+                Genetech Technologies
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl leading-relaxed">
+                Innovative IT Solutions for Modern Businesses. We transform ideas into digital reality with cutting-edge technology.
+              </p>
+              
+              {/* Feature Highlights */}
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full flex items-center justify-center">
+                    <CheckCircle className="h-4 w-4 text-white" />
+                  </div>
+                  <span className="text-gray-300">10+ Years Experience</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-400 rounded-full flex items-center justify-center">
+                    <CheckCircle className="h-4 w-4 text-white" />
+                  </div>
+                  <span className="text-gray-300">200+ Projects</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-400 rounded-full flex items-center justify-center">
+                    <CheckCircle className="h-4 w-4 text-white" />
+                  </div>
+                  <span className="text-gray-300">24/7 Support</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-400 rounded-full flex items-center justify-center">
+                    <CheckCircle className="h-4 w-4 text-white" />
+                  </div>
+                  <span className="text-gray-300">150+ Happy Clients</span>
+                </div>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Link to="/services" className="flex items-center">
+                    Our Services <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg font-semibold backdrop-blur-sm">
+                  <Link to="/contact">Get In Touch</Link>
+                </Button>
+              </div>
+            </div>
+            
+            {/* Right Column - Hero Images */}
+            <div className="relative">
+              <div className="relative z-10">
+                {/* Main Hero Image */}
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <img 
+                    src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+                    alt="Modern Technology Workspace" 
+                    className="w-full h-96 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
+                </div>
+                
+                {/* Secondary Images */}
+                <div className="absolute -top-8 -right-8 w-32 h-32 overflow-hidden rounded-xl shadow-xl transform -rotate-12 hover:rotate-0 transition-transform duration-500">
+                  <img 
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    alt="Team Collaboration" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <div className="absolute -bottom-8 -left-8 w-40 h-28 overflow-hidden rounded-xl shadow-xl transform rotate-6 hover:rotate-0 transition-transform duration-500">
+                  <img 
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    alt="Digital Innovation" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute -top-4 -left-4 w-8 h-8 bg-blue-500 rounded-full opacity-60 animate-bounce"></div>
+              <div className="absolute top-20 -right-2 w-4 h-4 bg-cyan-400 rounded-full opacity-80 animate-bounce delay-500"></div>
+              <div className="absolute bottom-10 right-20 w-6 h-6 bg-purple-500 rounded-full opacity-70 animate-bounce delay-1000"></div>
+            </div>
           </div>
         </div>
       </section>
