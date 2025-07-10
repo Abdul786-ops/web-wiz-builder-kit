@@ -2,7 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Code, Smartphone, Database, Shield, Globe, Users, Zap, Settings, ArrowRight } from "lucide-react";
+import { Code, Smartphone, Database, Shield, Globe, Users, Zap, Settings, ArrowRight, Monitor, Palette } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -11,45 +11,51 @@ const Services = () => {
   const services = [
     {
       icon: <Code className="h-12 w-12" />,
-      title: "Web Development",
-      description: "Custom web applications built with modern frameworks and technologies.",
-      features: ["React/Angular/Vue.js", "Node.js/Python/PHP", "Responsive Design", "E-commerce Solutions"],
-      color: "from-blue-500 to-cyan-500"
+      title: "Custom Software Development",
+      description: "Tailored software solutions built to meet your specific business requirements.",
+      features: ["Custom Applications", "Legacy System Modernization", "API Development", "Third-party Integrations"],
+      color: "from-blue-500 to-cyan-500",
+      link: "/services/custom-software"
     },
     {
-      icon: <Smartphone className="h-12 w-12" />,
-      title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications for iOS and Android.",
-      features: ["React Native", "Flutter", "iOS/Android Native", "App Store Deployment"],
-      color: "from-purple-500 to-pink-500"
+      icon: <Globe className="h-12 w-12" />,
+      title: "Web Development",
+      description: "Full-stack web applications built with modern frameworks and technologies.",
+      features: ["Responsive Design", "E-commerce Solutions", "CMS Development", "Progressive Web Apps"],
+      color: "from-green-500 to-emerald-500",
+      link: "/services/web-development"
+    },
+    {
+      icon: <Monitor className="h-12 w-12" />,
+      title: "Front-End Development",
+      description: "Beautiful, responsive user interfaces that provide exceptional user experiences.",
+      features: ["React/Angular/Vue.js", "Responsive Design", "Cross-browser Compatibility", "Performance Optimization"],
+      color: "from-purple-500 to-pink-500",
+      link: "/services/frontend-development"
     },
     {
       icon: <Database className="h-12 w-12" />,
-      title: "Database Solutions",
-      description: "Scalable database design, optimization, and management services.",
-      features: ["Database Design", "Performance Optimization", "Data Migration", "Analytics & Reporting"],
-      color: "from-green-500 to-emerald-500"
+      title: "Back-End Development",
+      description: "Robust server-side solutions and database architectures for scalable applications.",
+      features: ["API Development", "Database Design", "Server Architecture", "Cloud Integration"],
+      color: "from-red-500 to-orange-500",
+      link: "/services/backend-development"
+    },
+    {
+      icon: <Palette className="h-12 w-12" />,
+      title: "UI/UX Design",
+      description: "User-centered design solutions that combine aesthetics with functionality.",
+      features: ["User Research", "Wireframing & Prototyping", "Visual Design", "Usability Testing"],
+      color: "from-indigo-500 to-blue-500",
+      link: "/services/ui-ux-design"
     },
     {
       icon: <Shield className="h-12 w-12" />,
       title: "Cybersecurity",
       description: "Comprehensive security solutions to protect your digital assets.",
       features: ["Security Audits", "Penetration Testing", "Compliance Management", "Security Training"],
-      color: "from-red-500 to-orange-500"
-    },
-    {
-      icon: <Globe className="h-12 w-12" />,
-      title: "Cloud Services",
-      description: "Cloud migration, deployment, and management for scalable solutions.",
-      features: ["AWS/Azure/GCP", "Cloud Migration", "DevOps/CI-CD", "Monitoring & Support"],
-      color: "from-indigo-500 to-blue-500"
-    },
-    {
-      icon: <Users className="h-12 w-12" />,
-      title: "IT Consulting",
-      description: "Strategic IT consulting to optimize your business processes.",
-      features: ["Technology Strategy", "Digital Transformation", "Process Optimization", "Technical Training"],
-      color: "from-yellow-500 to-orange-500"
+      color: "from-yellow-500 to-orange-500",
+      link: "/contact"
     }
   ];
 
@@ -107,8 +113,8 @@ const Services = () => {
                     ))}
                   </div>
                   <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
-                    <Link to="/contact" className="flex items-center justify-center w-full">
-                      Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                    <Link to={service.link} className="flex items-center justify-center w-full">
+                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </CardContent>
