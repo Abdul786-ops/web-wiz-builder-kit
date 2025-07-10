@@ -19,7 +19,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-slate-900/95 backdrop-blur-sm border-b border-slate-700 sticky top-0 z-50">
+    <header className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -29,7 +29,7 @@ const Header = () => {
               alt="Genetech Logo" 
               className="h-8 w-auto"
             />
-            <span className="text-white font-bold text-lg">Genetech</span>
+            <span className="text-navy font-bold text-xl">Genetech</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -38,10 +38,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-blue-400 ${
+                className={`text-sm font-medium transition-colors hover:text-light-blue ${
                   isActive(item.href) 
-                    ? "text-blue-400 border-b-2 border-blue-400 pb-1" 
-                    : "text-gray-300"
+                    ? "text-light-blue border-b-2 border-light-blue pb-1" 
+                    : "text-dark"
                 }`}
               >
                 {item.name}
@@ -51,8 +51,8 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex">
-            <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
-              <Link to="/contact">Get Quote</Link>
+            <Button className="bg-light-blue hover:bg-light-blue/90 text-white">
+              <Link to="/contact">Get Started</Link>
             </Button>
           </div>
 
@@ -62,7 +62,7 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white"
+              className="text-navy"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
@@ -72,13 +72,13 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 border-t border-slate-700 bg-slate-900">
+            <div className="px-2 pt-2 pb-3 space-y-1 border-t bg-white">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-3 py-2 text-sm font-medium transition-colors hover:text-blue-400 ${
-                    isActive(item.href) ? "text-blue-400" : "text-gray-300"
+                  className={`block px-3 py-2 text-sm font-medium transition-colors hover:text-light-blue ${
+                    isActive(item.href) ? "text-light-blue" : "text-dark"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -86,8 +86,8 @@ const Header = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-500">
-                  <Link to="/contact">Get Quote</Link>
+                <Button className="w-full bg-light-blue hover:bg-light-blue/90 text-white">
+                  <Link to="/contact">Get Started</Link>
                 </Button>
               </div>
             </div>

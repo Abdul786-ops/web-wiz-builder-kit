@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, Award, Globe, Target, Eye, Heart } from "lucide-react";
+import { Users, Award, Globe, Target, Eye, Heart, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -11,174 +11,196 @@ const About = () => {
       name: "John Smith",
       position: "CEO & Founder",
       experience: "15+ years",
-      expertise: "Strategic Leadership"
+      expertise: "Strategic Leadership & Business Development"
     },
     {
       name: "Sarah Johnson",
-      position: "CTO",
+      position: "Chief Technology Officer",
       experience: "12+ years",
-      expertise: "Technology Innovation"
+      expertise: "Technology Innovation & Architecture"
     },
     {
       name: "Michael Chen",
-      position: "Lead Developer",
+      position: "Lead Software Engineer",
       experience: "10+ years",
-      expertise: "Full-Stack Development"
+      expertise: "Full-Stack Development & DevOps"
     },
     {
       name: "Emma Wilson",
       position: "Project Manager",
       experience: "8+ years",
-      expertise: "Project Delivery"
+      expertise: "Agile Project Delivery & Client Relations"
+    }
+  ];
+
+  const values = [
+    {
+      icon: <Target className="h-8 w-8" />,
+      title: "Innovation First",
+      description: "We embrace cutting-edge technologies and creative solutions to solve complex business challenges.",
+      color: "bg-light-blue"
+    },
+    {
+      icon: <Heart className="h-8 w-8" />,
+      title: "Client Success",
+      description: "Your success is our success. We're committed to delivering solutions that drive real business value.",
+      color: "bg-orange"
+    },
+    {
+      icon: <CheckCircle className="h-8 w-8" />,
+      title: "Quality Excellence",
+      description: "We maintain the highest standards in everything we do, from code quality to customer service.",
+      color: "bg-navy"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <div className="min-h-screen bg-white">
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 px-4 text-center text-white">
-        <div className="container mx-auto max-w-4xl">
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+      <section className="py-20 px-4 bg-light-gray">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h1 className="text-5xl font-bold mb-6 text-navy">
             About Genetech Technologies
           </h1>
-          <p className="text-xl text-gray-300 mb-8">
-            Founded in 2014, we've been at the forefront of technological innovation, 
-            helping businesses transform their digital presence and achieve their goals.
+          <p className="text-xl text-text-light mb-8 max-w-3xl mx-auto">
+            Since 2014, we've been empowering businesses with innovative technology solutions. 
+            Our passion for excellence and commitment to client success has made us a trusted 
+            partner for companies looking to transform their digital landscape.
           </p>
         </div>
       </section>
 
       {/* Company Stats */}
-      <section className="py-16 px-4 bg-slate-800/50">
+      <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="p-6">
-              <div className="text-4xl font-bold text-blue-400 mb-2">10+</div>
-              <div className="text-gray-300">Years Experience</div>
+              <div className="text-5xl font-bold text-light-blue mb-2">10+</div>
+              <div className="text-text-light">Years of Excellence</div>
             </div>
             <div className="p-6">
-              <div className="text-4xl font-bold text-cyan-400 mb-2">200+</div>
-              <div className="text-gray-300">Projects Completed</div>
+              <div className="text-5xl font-bold text-orange mb-2">200+</div>
+              <div className="text-text-light">Successful Projects</div>
             </div>
             <div className="p-6">
-              <div className="text-4xl font-bold text-green-400 mb-2">150+</div>
-              <div className="text-gray-300">Happy Clients</div>
+              <div className="text-5xl font-bold text-navy mb-2">150+</div>
+              <div className="text-text-light">Satisfied Clients</div>
             </div>
             <div className="p-6">
-              <div className="text-4xl font-bold text-purple-400 mb-2">50+</div>
-              <div className="text-gray-300">Team Members</div>
+              <div className="text-5xl font-bold text-light-blue mb-2">50+</div>
+              <div className="text-text-light">Expert Team Members</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Mission, Vision, Values */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-light-gray">
         <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-navy mb-4">Our Core Values</h2>
+            <p className="text-xl text-text-light max-w-2xl mx-auto">
+              The principles that guide our work and define our culture
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-slate-700/50 border-slate-600 text-center">
-              <CardHeader>
-                <Target className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-                <CardTitle className="text-white">Our Mission</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-300 text-base">
-                  To empower businesses with innovative technology solutions that drive growth, 
-                  efficiency, and success in the digital age.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-slate-700/50 border-slate-600 text-center">
-              <CardHeader>
-                <Eye className="h-12 w-12 text-cyan-400 mx-auto mb-4" />
-                <CardTitle className="text-white">Our Vision</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-300 text-base">
-                  To be the leading technology partner that transforms businesses through 
-                  cutting-edge solutions and exceptional service.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-slate-700/50 border-slate-600 text-center">
-              <CardHeader>
-                <Heart className="h-12 w-12 text-purple-400 mx-auto mb-4" />
-                <CardTitle className="text-white">Our Values</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-300 text-base">
-                  Innovation, integrity, excellence, and customer satisfaction are at the 
-                  core of everything we do.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            {values.map((value, index) => (
+              <Card key={index} className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardHeader>
+                  <div className={`w-16 h-16 ${value.color} rounded-lg flex items-center justify-center text-white mx-auto mb-4`}>
+                    {value.icon}
+                  </div>
+                  <CardTitle className="text-navy">{value.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-text-light text-base">
+                    {value.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Our Story */}
-      <section className="py-20 px-4 bg-slate-800/50">
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-6">Our Story</h2>
+            <h2 className="text-4xl font-bold text-navy mb-6">Our Journey</h2>
           </div>
-          <div className="text-gray-300 space-y-6 text-lg">
+          <div className="text-text-light space-y-6 text-lg leading-relaxed">
             <p>
-              Genetech Technologies was founded in 2014 with a simple yet powerful vision: 
-              to bridge the gap between complex technology and business success. What started 
-              as a small team of passionate developers has grown into a comprehensive IT 
-              solutions provider serving clients worldwide.
+              Genetech Technologies began as a vision to bridge the gap between cutting-edge 
+              technology and practical business solutions. Founded in 2014 by a team of 
+              passionate technologists, we started with a simple mission: to help businesses 
+              harness the power of technology to achieve their goals.
             </p>
             <p>
-              Over the years, we've evolved with the rapidly changing technology landscape, 
-              consistently staying ahead of trends and adopting emerging technologies to 
-              benefit our clients. From web development to cloud solutions, from mobile 
-              apps to cybersecurity, we've expanded our expertise to meet the diverse 
-              needs of modern businesses.
+              From our humble beginnings as a small development team, we've grown into a 
+              comprehensive technology partner serving clients across diverse industries. 
+              Our journey has been marked by continuous learning, adaptation, and an 
+              unwavering commitment to excellence.
             </p>
             <p>
-              Today, we're proud to have completed over 200 successful projects and 
-              maintained long-term partnerships with clients across various industries. 
-              Our commitment to excellence, innovation, and customer satisfaction continues 
-              to drive our growth and success.
+              Today, we're proud to be at the forefront of digital transformation, helping 
+              organizations navigate the complexities of modern technology. Our success is 
+              measured not just by the solutions we deliver, but by the lasting partnerships 
+              we build and the tangible business impact we create for our clients.
             </p>
           </div>
         </div>
       </section>
 
       {/* Team Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-light-gray">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Meet Our Team</h2>
-            <p className="text-xl text-gray-300">
-              Experienced professionals dedicated to your success
+            <h2 className="text-4xl font-bold text-navy mb-4">Meet Our Leadership Team</h2>
+            <p className="text-xl text-text-light">
+              Experienced professionals driving innovation and excellence
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
-              <Card key={index} className="bg-slate-700/50 border-slate-600 text-center hover:scale-105 transition-transform">
+              <Card key={index} className="text-center border-0 shadow-lg hover:shadow-xl transition-all hover:scale-105">
                 <CardHeader>
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-light-blue to-navy rounded-full mx-auto mb-4 flex items-center justify-center">
                     <Users className="h-10 w-10 text-white" />
                   </div>
-                  <CardTitle className="text-white">{member.name}</CardTitle>
-                  <CardDescription className="text-blue-400">
+                  <CardTitle className="text-navy">{member.name}</CardTitle>
+                  <CardDescription className="text-light-blue font-medium">
                     {member.position}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Badge variant="secondary" className="mb-2">
+                  <Badge variant="secondary" className="mb-3 bg-light-gray text-navy">
                     {member.experience}
                   </Badge>
-                  <p className="text-gray-300 text-sm">{member.expertise}</p>
+                  <p className="text-text-light text-sm">{member.expertise}</p>
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 px-4 bg-navy text-white">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
+          <p className="text-xl mb-8 text-gray-300">
+            Let's discuss how our expertise can help you achieve your technology goals.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" className="bg-light-blue hover:bg-light-blue/90 text-white px-8 py-3 rounded-md font-medium transition-colors">
+              Get Started Today
+            </a>
+            <a href="/portfolio" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-3 rounded-md font-medium transition-colors">
+              View Our Work
+            </a>
           </div>
         </div>
       </section>
